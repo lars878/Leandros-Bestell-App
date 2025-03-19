@@ -1,0 +1,110 @@
+header {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(26, 95, 11);
+    position: relative;
+    box-shadow: 0px 8px 16px rgba(39, 38, 38, 0.5);
+  }
+  
+  header > div,
+  footer > div {
+    width: 1440px;
+    padding: 0 12px;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: space-between;
+    color: var(--lightbrown);
+  }
+  
+  .title > div {
+    display: flex;
+  }
+  
+  .logo {
+    height: 72px;
+    width: 72px;
+    margin-top: 12px;
+    margin-right: 24px;
+  }
+  
+  .left_title p {
+    font-family: great Vibes;
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: baseline;
+    margin-top: 12px;
+    padding-top: 6px;
+  }
+  
+  .right_title {
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .right_title > p:first-child {
+    font-family: Great Vibes;
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin-top: 6px;
+  }
+  
+  .phone_btn {
+    background-color: var(--darkbrown);
+    border: 2px solid var(--lightbrown);
+    border-radius: 16px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .phone_btn:hover {
+    background-color: rgb(233, 92, 46);
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
+  }
+  
+  .phone_btn > a {
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--white);
+  }
+  
+  .phone_icon {
+    height: 30px;
+  }
+  
+  
+  footer {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--darkbrown);
+    border-top: 1px solid var(--lightbrown);
+  }
+  
+  footer div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--lightbrown);
+    letter-spacing: 1px;
+  }
+  
+  footer a {
+    color: var(--lightbrown);
+  }
+  
+  footer span {
+    font-style: italic;
+  }

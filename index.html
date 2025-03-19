@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandros Little Italy</title>
+  <meta name="description" content="Willkommen im Little Italy. Dem Italienischen Restaurant in Ort.">
+  <link rel="shortcut icon" href="./FavIcon/favicon-16x16.png" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/header_footer.css">
+  <link rel="stylesheet" href="./styles/basketStyle.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/popup.css">
+  <script src="./scripts/dishes.js"></script>
+  <script src="./scripts/templates.js"></script>
+  <script src="./scripts/messages.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body onload="render()">
+  <header>
+    <div class="title">
+      <div class="left_title">
+        <img src="./icons_images/plate.png" alt="logo with a plate, fork and knife" class="logo">
+        <p>Leandro</p>
+      </div>
+      <div class="right_title">
+        <p>Italienische Spezialitäten</p>
+        <div class="phone_btn">
+          <img class="phone_icon" src="./icons_images/phone.png" alt="phone graphic">
+          <a href="tel:089-123456789">0151-23602577</a>
+        </div>
+      </div>  
+    </div>
+  </header>
+  <main>
+    <div id="overlay" class="overlay d-none">
+      <div class="popup">
+        <div id="popup_container"></div>
+        <button id="popup_btn" class="popup_btn" onclick="closePopup()">&gt; close &lt;</button>
+      </div>
+    </div>
+    
+    <div class="wrapper">      
+      <section class="menu">
+        <div class="hero">
+          <div class="slogan">
+            <h1> <span style="color:green;">Willkommen</span></h1>
+            <p><span style="color: white;">im</span> </p> <br>
+            <p><span style="color: red;">Little</span></p>  <br>
+            <p><span style="color: red;">Italy</span></p> <br>
+
+          </div>         
+        </div>
+        <nav>
+          <div>
+            <a href="#basket_bottom" class="basket_nav hide">
+              <img src="./icons_images/basketLightbrown.png" alt="image of a basket" class="nav_icon">
+            </a>
+            <a href="#pizza">Pizza</a>
+            <a href="#pasta">Pasta</a>
+          </div>
+          <div>
+            <a href="#salads">Salate</a>
+        <!--<a href="#dessert">Dessert</a> --> <!-- auskommentiert, da Probleme mit dem unteren Scrollbalken --> 
+            <a href="#drinks">Getränke</a>
+          </div>
+        </nav>
+        <div class="categories">
+            <h2 id="pizza">Pizza</h2>
+            <img src="./icons_images/pizza2.jpg" alt="image of a pizza" class="dish_image">
+            <div id="pizza-list" class="category"></div>
+
+            <h2 id="pasta">Pasta</h2>
+            <img src="./icons_images/pasta2.jpg" alt="image of pasta" class="dish_image">
+            <div id="pasta-list" class="category"></div>
+          
+            <h2 id="salads">Salate</h2>
+            <img src="./icons_images/salat2.jpg" alt="image of a salad" class="dish_image">
+            <div id="salads-list" class="category"></div>
+       
+            <!--<h2 id="desserts">Dessert</h2>
+            <img src="./icons_images/dessert.jpg" alt="image of a dessert" class="dish_image">
+            <div id="desserts-list" class="category"></div>--> <!-- auskommentierrt, da Probleme mit dem unteren Scrollbalken-->
+
+            <h2 id="drinks">Getränke</h2>
+            <img src="./icons_images/getränke2.jpg" alt="image of a drinks" class="dish_image">
+            <div id="drinks-list" class="category"></div>  
+        </div>
+      </section>
+
+      <section class="basket_rail">
+        <div class="basket_container">
+          <div class="basket_title">
+            <h2>Warenkorb</h2>
+            <div>
+              <img src="./icons_images/basket.png" alt="image of a basket" class="basket_icon">
+              <p class="quantity"><span id="items">0</span></p>
+            </div>
+          </div>
+          <div id="basket-content" class="basket_content"><span class="empty_basket">Leer</span></div>
+          <button id="reset" class="reset d-none" onclick="resetBasket()">Korb leeren</button>
+          <div class="checkbox_container">
+            <input type="checkbox" id="delivery" onchange="checkbox()" disabled = true>
+            <label for="delivery">Selbstabholung: 15 min.</label>
+          </div>
+          <div class="amounts">
+            <p>Zwischensumme: <span><span id="subtotal">0,00</span> Euro</span></p>
+            <p>Lieferkosten: 15 - 30 min. <span><span id="service">5,95</span> Euro</span></p>
+            <p id="basket_bottom">Gesamtsumme: <span><span id="total">0,00</span> Euro</span></p>
+          </div>
+          <div id="send" class="send d-none">
+            <input type="submit" class="reset" value="Abschicken" onclick="startTyping()">
+          </div>                
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div>
+      <p>&copy; <span>hero image</span>: powered by ChatGpt </p>
+      <p><span>images and logo</span>: Pixabay / favicon</p>
+      <p>&copy; Lars Tieseler März 2025</p>
+    </div>
+  </footer>
+</body>
+</html>

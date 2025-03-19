@@ -1,0 +1,162 @@
+.basket_rail {
+    position: relative;
+    width: 400px;
+  }
+  
+  .basket_container {
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+    background-color: var(--white);
+    padding: 24px 28px;
+    box-shadow: 8px 10px 10px rgba(39, 38, 38, 0.8);
+  }
+  
+  .basket_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .basket_title > div {
+    display: flex;
+    gap: 8px;
+    position: relative;
+  }
+  
+  .basket_icon {
+    width: 36px;
+    margin-top: 2px;
+  }
+  
+  .quantity {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    background-color: var(--green_basket);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .basket_content {
+    padding: 8px 0 16px;
+  }
+  
+  .item_template {
+    padding: 8px 0 4px;
+    border-bottom: 1px solid rgb(174, 169, 169);
+  }
+  
+  .item_template > p {
+    font-weight: 700;
+  }
+  
+  .item_menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0 0;
+  }
+  
+  .item_menu > div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .item_menu > div > .icon_frame {
+    border-radius: 50px;
+    border: 2px solid var(--white);
+    height: 34px;
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon_frame > .basket_icon {
+    width: 28px;
+    margin: 0 0;
+  }
+  
+  .item_menu > div > .icon_frame:hover {
+    border: 2px solid var(--green_basket);
+    transition: all 225ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  .item_menu > div:nth-child(2) > .icon_frame {
+    margin-bottom: 4px;
+  }
+  
+  .item_menu > div:nth-child(2) > .icon_frame:hover {
+    border: 2px solid var(--mint);
+    background-color: var(--mint);
+    height: 34px;
+    width: 34px;
+    transition: all 225ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  .reset {
+    color: var(--green_basket);
+    background-color: var(--white);
+    border: 2px solid var(--green_basket);
+    border-radius: 12px;
+    font-size: clamp(1.0rem, 2vw, 1.4rem);
+    font-weight: 600;
+    padding: 8px 16px;
+    margin-bottom: 12px;
+  }
+  
+  .reset:hover {
+    color: var(--white);
+    background-color: var(--green_basket);
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
+  }
+  
+  .checkbox_container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+  
+  input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    accent-color: var(--green_basket);
+    cursor: pointer;
+  }
+  
+  .amounts > p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 4px 0;
+  }
+  
+  .amounts > p:last-child {
+    font-weight: 700;
+  }
+  
+  .send {
+    margin-top: 16px;
+  }
+  
+  .empty_basket {
+    color: var(--green_basket);
+    padding: 12px 0;
+  }
+  
+  .d-none {
+    display: none;
+  }
+  

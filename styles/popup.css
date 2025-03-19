@@ -1,0 +1,38 @@
+.overlay {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .popup {
+    background-color: black;
+    color: var(--white);
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    margin-top: 60px;
+    width: 640px;
+    height: 300px;
+  }
+  
+  #popup_container div {
+    font-size: 16px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+  }
+  
+  .popup_btn {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: var(--white);
+    background-color: black;
+    border: none;
+    margin-top: 12px;
+  }
+  
+  .d-none {
+    display: none;
+  }
