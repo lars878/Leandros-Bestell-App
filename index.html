@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -9,10 +10,8 @@
   <link rel="stylesheet" href="./styles/header_footer.css">
   <link rel="stylesheet" href="./styles/basketStyle.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="./styles/popup.css">
   <script src="./scripts/dishes.js"></script>
   <script src="./scripts/templates.js"></script>
-  <script src="./scripts/messages.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -33,12 +32,6 @@
     </div>
   </header>
   <main>
-    <div id="overlay" class="overlay d-none">
-      <div class="popup">
-        <div id="popup_container"></div>
-        <button id="popup_btn" class="popup_btn" onclick="closePopup()">&gt; close &lt;</button>
-      </div>
-    </div>
     
     <div class="wrapper">      
       <section class="menu">
@@ -48,7 +41,7 @@
             <p><span style="color: white;">im</span> </p> <br>
             <p><span style="color: red;">Little</span></p>  <br>
             <p><span style="color: red;">Italy</span></p> <br>
-
+          
           </div>         
         </div>
         <nav>
@@ -64,7 +57,44 @@
         <!--<a href="#dessert">Dessert</a> --> <!-- auskommentiert, da Probleme mit dem unteren Scrollbalken --> 
             <a href="#drinks">Getränke</a>
           </div>
+
         </nav>
+
+<!-- Sticky-Container für Button + Warenkorb zusammen -->
+<div class="sticky-cart-container d-xl-none" id="stickyCartContainer">
+  <div class="sticky-cart-toggle">
+    <button id="toggleCartBtn" class="btn btn-success" onclick="toggleWarenkorb()">🛒 Warenkorb anzeigen</button>
+  </div>
+
+  <!-- Aufklappbarer Warenkorb -->
+  <div class="slide-warenkorb" id="slideWarenkorb">
+    <div class="basket_container">
+      <div class="basket_title">
+        <h2>Warenkorb</h2>
+        <div>
+          <img src="./icons_images/basket.png" alt="Warenkorb" class="basket_icon">
+          <p class="quantity"><span id="items">0</span></p>
+        </div>
+      </div>
+      <div id="basket-content" class="basket_content">
+        <span class="empty_basket">Ihr Warenkorb ist wieder leer</span>
+      </div>
+      <button id="reset" class="reset d-none" onclick="resetBasket()">Korb leeren</button>
+      <div class="checkbox_container">
+        <input type="checkbox" id="delivery" onchange="checkbox()" disabled>
+        <label for="delivery">Selbstabholung: 15 min.</label>
+      </div>
+      <div class="amounts">
+        <p>Zwischensumme: <span><span id="subtotal">0,00</span> Euro</span></p>
+        <p>Lieferkosten: 15 - 30 min. <span><span id="service">5,95</span> Euro</span></p>
+        <p id="basket_bottom"><strong>Gesamtsumme: <span id="total">0,00</span> Euro</strong></p>
+      </div>
+      <div class="send d-none">
+        <input type="button" class="reset" value="Abschicken" id="send">
+      </div>
+    </div>
+  </div>
+</div>
         <div class="categories">
             <h2 id="pizza">Pizza</h2>
             <img src="./icons_images/pizza2.jpg" alt="image of a pizza" class="dish_image">
@@ -87,40 +117,50 @@
             <div id="drinks-list" class="category"></div>  
         </div>
       </section>
-
       <section class="basket_rail">
-        <div class="basket_container">
-          <div class="basket_title">
-            <h2>Warenkorb</h2>
-            <div>
-              <img src="./icons_images/basket.png" alt="image of a basket" class="basket_icon">
-              <p class="quantity"><span id="items">0</span></p>
+        <div class="warenkorb">
+          <div class="basket_container">
+            <div class="basket_title">
+              <h2>Warenkorb</h2>
+              <div>
+                <img src="./icons_images/basket.png" alt="image of a basket" class="basket_icon">
+                <p class="quantity"><span id="items-desktop">0</span></p>
+              </div>
             </div>
+      
+            <div id="basket-content-desktop" class="basket_content">
+              <span class="empty_basket">Leer</span>
+            </div>
+      
+            <button id="reset-desktop" class="reset d-none" onclick="resetBasket()">Korb leeren</button>
+      
+            <div class="checkbox_container">
+              <input type="checkbox" id="delivery-desktop" onchange="checkbox()" disabled>
+              <label for="delivery-desktop">Selbstabholung: 15 min.</label>
+            </div>
+      
+            <div class="amounts">
+              <p>Zwischensumme: <span><span id="subtotal-desktop">0,00</span> Euro</span></p>
+              <p>Lieferkosten: 15 - 30 min. <span><span id="service-desktop">5,95</span> Euro</span></p>
+              <p id="basket_bottom-desktop">Gesamtsumme: <span><span id="total-desktop">0,00</span> Euro</span></p>
+            </div>
+      
+            <div class="send d-none">
+              <input type="button" class="reset" value="Abschicken" id="send-desktop">
+            </div>                
           </div>
-          <div id="basket-content" class="basket_content"><span class="empty_basket">Leer</span></div>
-          <button id="reset" class="reset d-none" onclick="resetBasket()">Korb leeren</button>
-          <div class="checkbox_container">
-            <input type="checkbox" id="delivery" onchange="checkbox()" disabled = true>
-            <label for="delivery">Selbstabholung: 15 min.</label>
-          </div>
-          <div class="amounts">
-            <p>Zwischensumme: <span><span id="subtotal">0,00</span> Euro</span></p>
-            <p>Lieferkosten: 15 - 30 min. <span><span id="service">5,95</span> Euro</span></p>
-            <p id="basket_bottom">Gesamtsumme: <span><span id="total">0,00</span> Euro</span></p>
-          </div>
-          <div id="send" class="send d-none">
-            <input type="submit" class="reset" value="Abschicken" onclick="startTyping()">
-          </div>                
         </div>
       </section>
+      
     </div>
+  </div>
   </main>
   
   <footer>
     <div>
       <p>&copy; <span>hero image</span>: powered by ChatGpt </p>
       <p><span>images and logo</span>: Pixabay / favicon</p>
-      <p>&copy; Lars Tieseler März 2025</p>
+      <p>&copy; Lars Tieseler April 2025</p>
     </div>
   </footer>
 </body>

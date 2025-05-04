@@ -12,10 +12,10 @@
     background-color: black;
     color: var(--white);
     font-family: 'Courier New', monospace;
-    padding: 20px;
-    margin-top: 60px;
-    width: 640px;
-    height: 300px;
+    padding: 19px;
+    margin-top: 99px;
+    width: 300px;
+    height: 183px;
   }
   
   #popup_container div {

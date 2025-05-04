@@ -90,7 +90,6 @@ header {
     position: sticky;
     bottom: 0;
     background-color: var(--darkbrown);
-    border-top: 1px solid var(--lightbrown);
   }
   
   footer div {

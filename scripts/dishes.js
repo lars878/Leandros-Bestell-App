@@ -1,4 +1,4 @@
-const dishes = {
+const allDishes = {
     "pizza": [
       {
         "name": "Pizza Margherita",
@@ -195,4 +195,4 @@ const dishes = {
             "price": 5.90
         },
     ],
-  };
+  }
